@@ -8,11 +8,11 @@ class Solution:
                 closeP -= 1
             arr.append(s)
             return
-        if openP == closeP:
+        if openP != 0:
             # s += '('
             self.addParenthesis(openP-1, closeP, s+'(', arr)
-        if openP < closeP:
-            self.addParenthesis(openP-1, closeP, s+'(', arr)
+        if closeP > openP:
+            # self.addParenthesis(openP-1, closeP, s+'(', arr)
             self.addParenthesis(openP, closeP-1, s+')', arr)
 
     def generateParenthesis(self, n: int) -> List[str]:
