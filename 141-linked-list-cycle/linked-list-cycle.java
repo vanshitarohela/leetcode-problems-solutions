@@ -14,10 +14,8 @@ public class Solution {
         // ListNode curr = new ListNode(head);
         Set<ListNode> ans = new HashSet<>();
         while(head != null) {
-            if(ans.contains(head)) {
+            if(!ans.add(head)) {
                 return true;
-            } else {
-                ans.add(head);
             }
             head = head.next;
         }
