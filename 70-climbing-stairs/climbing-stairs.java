@@ -34,10 +34,11 @@ class Solution {
         if(cache[curr] != 0) {
             return cache[curr];
         }
-        int total = 0;
-        total += rec(curr+1, target, cache);
-        total += rec(curr+2, target, cache);
-        cache[curr] = total;
-        return total;
+        // int total = 0;
+        // total += rec(curr+1, target, cache);
+        // total += rec(curr+2, target, cache);
+        // cache[curr] = total;
+        return cache[curr] = rec(curr+1, target, cache) + rec(curr+2, target, cache);
+        // return total;
     } 
 }
